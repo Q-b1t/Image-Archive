@@ -26,3 +26,5 @@ COPY ros_entrypoint.sh /root/.
 ENTRYPOINT ["/root/ros_entrypoint.sh"]
 
 CMD ["bash"]
+
+

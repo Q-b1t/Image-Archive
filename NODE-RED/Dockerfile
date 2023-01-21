@@ -12,4 +12,3 @@ npm install node-red-node-random && \
 npm install node-red-node-mysql && \
 npm install node-red-node-smooth && \
 npm install node-red-contrib-ui-led
-
