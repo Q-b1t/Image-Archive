@@ -8,6 +8,8 @@ ARG INTERNAL_WORKSPACE=/ros2_ws
 
 WORKDIR ${INTERNAL_WORKSPACE}
 
+COPY fix_controller.sh ${INTERNAL_WORKSPACE}/.
+
 ENV NVIDIA_VISIBLE_DEVICES \
     ${NVIDIA_VISIBLE_DEVICES:-all}
 ENV NVIDIA_DRIVER_CAPABILITIES \
@@ -44,11 +46,7 @@ RUN pip3 install setuptools==58.2.0 && \
     pip3 install opencv-contrib-python==4.6.0.66 && \
     pip3 install pygame
 
-FROM python-libs AS repair_controller_manager
-
-COPY fix_controller.sh .
-
-FROM repair_controller_manager AS set_entrypoint
+FROM python-libs AS set_entrypoint
 
 COPY ros_entrypoint.sh /root/.
 
