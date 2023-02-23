@@ -38,8 +38,8 @@ RUN apt-get install -y ros-${ROS_DISTRO}-joint-state-publisher && \
     apt-get install -y ros-${ROS_DISTRO}-joint-state-broadcaster && \
     apt-get install -y ros-${ROS_DISTRO}-joint-trajectory-controller && \
     apt-get install -y ros-${ROS_DISTRO}-controller-manager && \
-    apt-get install -y ros-${ROS_DISTRO}-gazebo-ros2-control
-
+    apt-get install -y ros-${ROS_DISTRO}-gazebo-ros2-control && \
+    apt-get install -y ros-${ROS_DISTRO}-cv-bridge 
 FROM ros-dep-install AS python-libs
 
 RUN pip3 install setuptools==58.2.0 && \
