@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  spark_container:
+    container_name: spark_portable
+    build: .
+    tty: True
+    stdin_open: true
+    volumes:
+      - ./spark_env:/spark_env
+    ports:
+      - '8080:8080' 
+      - '4040:4040'
+      - '18080:18080'
+      - '8081:8081'
+      - '8032:8032'
+      - '7077:7077'
