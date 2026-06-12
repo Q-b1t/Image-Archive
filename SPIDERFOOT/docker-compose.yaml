@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  spiderfoot:
+    build: . 
+    ports:
+      - '5001:5001'
+    volumes:
+      - spiderfoot_storage:/root/.spiderfoot/
+    stdin_open: true
+    tty: true 
+
+volumes:
+  spiderfoot_storage:
